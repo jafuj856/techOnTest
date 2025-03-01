@@ -6,7 +6,7 @@ import TabelSection from './TabelSection';
 function DashBoard() {
   return (
     <div className="w-full">
-      <div className="flex items-start gap-5 w-full flex-col lg:flex-row">
+      <div className="flex items-start gap-5 w-full flex-col xl:flex-row">
         <ApexChart />
         <TabelSection />
       </div>

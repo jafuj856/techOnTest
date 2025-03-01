@@ -131,7 +131,7 @@ const ApexChart = () => {
         display: "flex",
         flexDirection: "column",
       }}
-      className="w-full md:min-h-[360px] lg:max-w-[36%]"
+      className="w-full md:min-h-[360px] xl:max-w-[36%]"
     >
       <div className="w-full flex items-center justify-between p-4 font-[600] text-[16px] lg:text-[20px]">
         <h1 className="font-p">Documents Expiring</h1>

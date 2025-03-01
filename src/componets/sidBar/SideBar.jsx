@@ -3,14 +3,31 @@ import SideBarButton from './SideBarButton';
 
 function SideBar() {
    
-    const [selected,setSelected] = useState(
-'home'
-    )
+  const [selected, setSelected] = useState('home')
+  const [hoverText,setHoverText] = useState('')
   return (
     <div className="h-[80vh] w-[160px] fixed left-0 hidden flex-col p-4 lg:flex items-center ">
       {/* 1111 */}
-      <div className="rounded-full flex flex-col gap-5 bg-[#FFFFFF9C] border-[1px] border-[#0000001A] pb-8">
+      <div className="rounded-full flex flex-col gap-5 bg-[#FFFFFF9C] border-[1px] border-[#0000001A] pb-8 relative">
+        <div
+          className={`z-0 transition-all duration-700 ease-in-out top-0 ${
+            hoverText === "1"
+              ? "top-[66px]"
+              : hoverText === "home"
+              ? "top-0"
+              : hoverText === "2"
+              ? "top-[132px]"
+              : hoverText === "3"
+              ? "top-[198px]"
+              : hoverText === "4"
+              ? "top-[264px]"
+              : hoverText === "5" && "top-[330px]"
+          } absolute h-[46px] w-[46px] rounded-full bg-[#89b106] `}
+        ></div>
         <SideBarButton
+          hoverText={hoverText}
+          setHoverText={setHoverText}
+          setSelected={setSelected}
           svg={
             <svg
               width="37"
@@ -29,11 +46,17 @@ function SideBar() {
           text={"home"}
         />
         <SideBarButton
+          hoverText={hoverText}
+          setHoverText={setHoverText}
+          setSelected={setSelected}
           svg={<img src={"/svg.svg"} />}
           selected={selected}
-          text={""}
+          text={"1"}
         />
         <SideBarButton
+          hoverText={hoverText}
+          setHoverText={setHoverText}
+          setSelected={setSelected}
           svg={
             <svg
               width="30"
@@ -51,48 +74,68 @@ function SideBar() {
             </svg>
           }
           selected={selected}
-          text={""}
+          text={"2"}
         />
         <SideBarButton
+          hoverText={hoverText}
+          setHoverText={setHoverText}
+          setSelected={setSelected}
           svg={<img src={"/revenue.svg"} />}
           selected={selected}
-          text={""}
+          text={"3"}
         />
         <SideBarButton
+          hoverText={hoverText}
+          setHoverText={setHoverText}
+          setSelected={setSelected}
           svg={<img src={"/doller.svg"} />}
           selected={selected}
-          text={""}
+          text={"4"}
         />
         <SideBarButton
+          hoverText={hoverText}
+          setHoverText={setHoverText}
+          setSelected={setSelected}
           svg={<img src={"/statatic.svg"} />}
           selected={selected}
-          text={""}
+          text={"5"}
         />
       </div>
       {/* 22222 */}
 
       <div className="rounded-full flex flex-col gap-6 bg-[#FFFFFF9C] border-[1px] border-[#0000001A] fixed bottom-10 ">
-        <SideBarButton
-          svg={
-            <svg
-              width="20"
-              height="18"
-              viewBox="0 0 20 18"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M15 4L13.59 5.41L16.17 8H6V10H16.17L13.59 12.58L15 14L20 9M2 2H10V0H2C0.9 0 0 0.9 0 2V16C0 17.1 0.9 18 2 18H10V16H2V2Z"
-                fill="black"
-              />
-            </svg>
-          }
-          selected={selected}
-          text={"home324"}
-        />
+        <div className="h-full flex flex-col relative gap-6">
+          <div
+            className={` w-[46px] h-[46px] rounded-full transition-all duration-700 ease-in-out top-0`}
+          >
+            <SideBarButton
+              hoverText={hoverText}
+              setHoverText={setHoverText}
+              setSelected={setSelected}
+              svg={
+                <svg
+                  width="20"
+                  height="18"
+                  viewBox="0 0 20 18"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M15 4L13.59 5.41L16.17 8H6V10H16.17L13.59 12.58L15 14L20 9M2 2H10V0H2C0.9 0 0 0.9 0 2V16C0 17.1 0.9 18 2 18H10V16H2V2Z"
+                    fill="black"
+                  />
+                </svg>
+              }
+              selected={selected}
+              text={"logout"}
+            />
+          </div>
 
-        <div className="w-[46px] h-[46px]">
-          <img src="/icon.svg" alt="" />
+          <div
+            className={` w-[46px] h-[46px] rounded-full transition-all duration-700 ease-in-out top-0`}
+          >
+            <img src="/icon.svg" alt="" />
+          </div>
         </div>
       </div>
     </div>

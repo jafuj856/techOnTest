@@ -14,7 +14,7 @@ function TabelSection() {
         display: "flex",
         flexDirection: "column",
       }}
-      className=" w-full md:min-h-[360px] lg:max-w-[80%] p-4"
+      className=" w-full md:min-h-[360px] xl:max-w-[80%] p-4"
     >
       <div className="flex items-center justify-between mb-6">
         <h1 className="font-[600] text-[10px] md:text-[16px] lg:text-[25px] 2xl:text-[30px]">
@@ -48,7 +48,7 @@ function TabelSection() {
         </thead>
       </table>
       <div className="flex items-center justify-center w-full mt-4">
-        <img src="/nodata.svg" className="w-[104px] lg:w-auto" alt="" />
+        <img src="/nodata.svg" className="w-[64px] lg:w-auto" alt="" />
       </div>
     </div>
   );
